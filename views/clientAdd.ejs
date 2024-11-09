@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Project</title>
+  <style>
+   
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0e6ed; 
+      color: #2e3b4e; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+  
+    .form-container {
+      background-color: #f7f9fc; 
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Title */
+    h1 {
+      font-size: 24px;
+      color: #1c3b57; 
+      margin-bottom: 20px;
+    }
+
+    
+    input[type="text"],
+    textarea,
+    input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #b8c4d2; 
+      border-radius: 8px;
+      background-color: #ffffff;
+      font-size: 16px;
+      color: #2e3b4e; 
+      transition: border-color 0.2s;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus,
+    input[type="file"]:focus {
+      border-color: #4a90e2; 
+      outline: none;
+    }
+
+   
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #4a90e2; 
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .submit-btn:hover {
+      background-color: #367dc2; 
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Add Client</h1>
+    <form method="POST" action="http://localhost:6001/admin/add-clients" enctype="multipart/form-data">
+        <input type="text" id="clientName" name="client_name" placeholder="Client Name" required>
+        <input type="text" id="clientDesignation" name="client_degignation" placeholder="Client Designation" required>
+        <textarea id="clientDescription" name="client_remark" placeholder="Client Description" required></textarea>
+        <input type="file" id="clientImage" name="client_image" placeholder="Upload Client Image" required>
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

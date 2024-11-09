@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email and Date List</title>
+  <style>
+    /* Reset and body styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0e6ed; /* Light bluish-grey background */
+      color: #2e3b4e; /* Dark bluish-grey text */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    /* Container for the title and list */
+    .container {
+      max-width: 600px;
+      width: 100%;
+    }
+
+    h1 {
+      text-align: center;
+      color: #1c3b57; /* Darker blue for title */
+      margin-bottom: 20px;
+    }
+
+    .email-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Individual card styling for each email and date */
+    .email-list li {
+      background-color: #f7f9fc; /* Soft bluish-white background */
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+      margin-bottom: 15px;
+      padding: 20px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border-left: 4px solid #4a90e2; /* Left border with blue accent */
+    }
+
+    /* Hover effect on each card */
+    .email-list li:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Styling for email and date */
+    .email-details {
+      margin: 8px 0;
+      color: #2e3b4e; /* Dark text color */
+    }
+
+    /* Label styling */
+    .label {
+      font-weight: bold;
+      color: #4a90e2; /* Blue color for labels */
+      margin-right: 5px;
+    }
+
+    /* Make emails clickable */
+    .email-address a {
+      color: #3b5998; /* Soft blue for email links */
+      text-decoration: none;
+    }
+    .email-address a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Email and Date List</h1>
+    <ul class="email-list">
+      <% emails.forEach(function(item) { %>
+        <li>
+          <div class="email-details email-address"><span class="label">Email:</span> <a href="mailto:<%= item.email %>"><%= item.email %></a></div>
+          <div class="email-details"><span class="label">Date:</span> <%= item.date %></div>
+        </li>
+      <% }); %>
+    </ul>
+  </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+    
+        <div class="navbar-center">
+            <button class="navbar-btn" onclick="showForm('project')">Project Management</button>
+            <button class="navbar-btn" onclick="showForm('client')">Client Management</button>
+            <button class="navbar-btn" onclick="showForm('contact')">Contact Form Details</button>
+            <button class="navbar-btn" onclick="showForm('emails')">Subscribed Emails</button>
+        </div>
+    
+    </nav>
+
+    <!-- Forms Section -->
+    <div id="formContainer">
+        <!-- Project Management Form -->
+        <div id="projectForm" class="form-container">
+            <h3>Manage Project</h3>
+            <form>
+                <input type="file" id="projectImage" placeholder="Upload Project Image" required>
+                <input type="text" id="projectName" placeholder="Project Name" required>
+                <textarea id="projectDescription" placeholder="Project Description" required></textarea>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+
+        <!-- Client Management Form -->
+        <div id="clientForm" class="form-container">
+            <h3>Manage Client</h3>
+            <form>
+                <input type="file" id="clientImage" placeholder="Upload Client Image" required>
+                <input type="text" id="clientName" placeholder="Client Name" required>
+                <textarea id="clientDescription" placeholder="Client Description" required></textarea>
+                <input type="text" id="clientDesignation" placeholder="Client Designation" required>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+
+        <!-- Contact Form Details -->
+        <div id="contactFormDetails" class="form-container">
+            <h3>Contact Form Submissions</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Message</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
+        <!-- Subscribed Emails -->
+        <div id="subscribedEmails" class="form-container">
+            <h3>Subscribed Emails</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Email</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+
+    <script src="adminscript.js"></script>
+</body>
+</html>

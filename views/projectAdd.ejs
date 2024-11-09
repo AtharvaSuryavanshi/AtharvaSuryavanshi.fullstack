@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Project</title>
+  <style>
+    /* Reset and body styling */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0e6ed; /* Light bluish-grey background */
+      color: #2e3b4e; /* Dark bluish-grey text */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    /* Form container */
+    .form-container {
+      background-color: #f7f9fc; /* Soft bluish-white form background */
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Title */
+    h1 {
+      font-size: 24px;
+      color: #1c3b57; /* Darker blue for title */
+      margin-bottom: 20px;
+    }
+
+    /* Input fields styling */
+    input[type="text"],
+    textarea,
+    input[type="file"] {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #b8c4d2; /* Light grey border */
+      border-radius: 8px;
+      background-color: #ffffff;
+      font-size: 16px;
+      color: #2e3b4e; /* Text color */
+      transition: border-color 0.2s;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus,
+    input[type="file"]:focus {
+      border-color: #4a90e2; /* Focus border color */
+      outline: none;
+    }
+
+    /* Textarea styling */
+    textarea {
+      resize: vertical;
+      height: 100px;
+    }
+
+    /* Submit button styling */
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #4a90e2; /* Blue background */
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s, transform 0.2s;
+    }
+
+    .submit-btn:hover {
+      background-color: #367dc2; /* Darker blue on hover */
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Add Project</h1>
+    <form method="POST" action="http://localhost:6001/admin/add-projects" enctype="multipart/form-data">
+      <input type="text" id="projectName" name="project_name" placeholder="Project Name" required>
+      <input type="text" id="projectHeader" name="project_header" placeholder="Project Header" required>
+      <textarea id="projectDescription" name="project_location" placeholder="Project Location" required></textarea>
+      <input type="file" id="projectImage" name="project_image" required>
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/public/styles.css">
+  <title>FLIPR</title>
+</head>
+
+<body class="font-poppins">
+
+  <!-- Navbar Section -->
+  <nav class="navbar">
+    <div class="navbar-logo">
+      <img src="/public/assests/logo.svg" alt="FLIPR Logo" class="h-10 w-auto">
+    </div>
+    <div class="navbar-menu">
+      <a href="#home">HOME</a>
+      <a href="#services">SERVICES</a>
+      <a href="#about-projects">ABOUT PROJECTS</a>
+      <a href="#testimonials">TESTIMONIALS</a>  
+    </div>
+    <button class="navbar-contact-button"><a href="/#contact-form">CONTACT</a></button>
+    <!-- Updated LOGIN Button with Link -->
+    <a href="/admin" class="navbar-login-button">ADMIN</a>
+
+
+
+  </nav>
+
+  <!-- Landing Section (First Page) -->
+  <section class="landing-section flex items-center justify-between px-8 py-20 md:py-32 lg:py-48 width:1" id="contact-form">
+    <!-- Left Column: Heading -->
+    <div class="text-left max-w-md">
+      <h1 class="hero-text">
+        Consultation,<br>Design,<br> & Marketing
+      </h1>
+    </div>
+
+    <div class="contact-form">
+      <h2>Get a Free Consultation</h2>
+      <form  action="http://localhost:6001/contact-form" method="POST">
+        <input type="text" name="name" placeholder="Full Name" required>
+        <input type="email" name="email" placeholder="Enter Email Address" required>
+        <input type="tel" name="phone" placeholder="Mobile Number" required>
+        <input type="text" name="city" placeholder="Area, City" required>
+        <button type="submit"> Get Quick Quote </button>
+          
+      </form>
+    </div>
+  </section>
+
+  <!-- Second Section -->
+  <div class="container">
+    <div class="design-1-left">
+      <img alt="grey circle" class="circle-1" src="/public/assests/average 1 left.svg">
+
+    </div>
+
+    <div class="content">
+      <div class="text-section">
+        <h1>
+          Not Your Average Realtor
+        </h1>
+        <p>
+          Real estate services for buyers and sellers with a focus on personalized service, innovative marketing
+          strategies, and effective communication to get the best results for your real estate transactions.
+        </p>
+      </div>
+      <div class="image-section">
+        <img alt="Realtor holding a small house model" class="main-image" height="300" src="/public/assests/Ellipse 11.svg"
+          width="300" />
+        <img alt="Couple discussing with a realtor" class="small-image top-right" height="150"
+          src="/public/assests/Ellipse 12.svg" width="150" />
+        <img alt="Realtor showing a house model" class="small-image bottom-right" height="150"
+          src="/public/assests/Ellipse 13.svg" width="150" />
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Why Choose Us Section -->
+  <section class="why-choose-us">
+    <h2 class="section-title">Why Choose Us?</h2>
+    <div class="card-container">
+      <!-- Card 1: Potential ROI -->
+      <div class="card">
+        <div class="icon-container">
+          <img src="/public/assests/home.svg" alt="Potential ROI Icon" class="icon">
+        </div>
+        <h3 class="card-title">Potential ROI</h3>
+        <p class="card-description">
+          Our approach is designed to offer substantial returns on investment. With strategic planning and market
+          expertise, we maximize your real estate potential and provide you with the best ROI opportunities.
+        </p>
+      </div>
+
+      <!-- Card 2: Design -->
+      <div class="card">
+        <div class="icon-container">
+          <img src="/public/assests/paintbrush-2.svg" alt="Design Icon" class="icon">
+        </div>
+        <h3 class="card-title">Design</h3>
+        <p class="card-description">
+          With cutting-edge design expertise, we craft spaces that reflect your brand's essence. From concept to
+          execution, our designs elevate your business presence and enhance your value proposition.
+        </p>
+      </div>
+
+      <!-- Card 3: Marketing -->
+      <div class="card">
+        <div class="icon-container">
+          <img src="/public/assests/circle-dollar-sign.svg" alt="Marketing Icon" class="icon">
+        </div>
+        <h3 class="card-title">Marketing</h3>
+        <p class="card-description">
+          Our marketing strategies are tailored to attract the right audience. By leveraging digital tools, we ensure
+          your project gets maximum visibility, increasing your chances for success in a competitive market.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Diagonal Images Section -->
+  <section class="diagonal-images">
+    <img src="/public/assests/about us 1.svg" alt="Image-1" class="diagonal-image-1">
+    <img src="/public/assests/aboutus 3.svg" alt="Image-2" class="diagonal-image-2">
+    <img src="/public/assests/about us 2.svg" alt="Image-3" class="diagonal-image-3">
+  </section>
+
+
+
+  <!-- About Us Section -->
+
+  <section class="about-us">
+    <h2>About Us</h2>
+    <p class="about-text">
+      We are a team of passionate experts dedicated to providing outstanding services in consultation, design, and
+      marketing. Our commitment is to deliver exceptional quality and drive remarkable outcomes for every client. At our
+      core, we believe in innovation, reliability, and a personalized approach to achieve unparalleled client
+      satisfaction.
+    </p>
+
+  </section>
+
+  <section id="about-us">
+    <a href="#" class="learn-more-btn">Learn More</a>
+  </section>
+
+  <!-- our project section-->
+
+  <section id="our-projects">
+    <h2>Our Projects</h2>
+    <div class="projects-container">
+        <% projects.forEach((project) => { %>
+            <div class="project-card">
+              <img src="<%= project.project_imageUrl %>" alt="<%= project.name %> Project">
+              <h3><%= project.project_header %></h3>
+              <p><%= project.project_name %></p>
+              <a href="#" class="learn-more-btn">Read More</a>
+            </div>
+          <% }); %>
+    </div>
+  </section>
+  <!-- our happy clients html-->
+
+  <section id="our-happy-clients">
+    <h2>Our Happy Clients</h2>
+    <div class="clients">
+        <% clients.forEach((client) => { %>
+           <div class="clients-card">
+              <img src="<%= client.client_imageUrl %>" alt="Client 2">
+              <p><%= client.client_remark %></p>
+              <h7><%= client.client_name %></h7>
+              <p><%= client.client_degignation %></p>
+          </div>
+          <% }); %>
+    </div>
+  </section>
+
+  <!-- Section with Background Image and Content -->
+  <section class="content-section">
+    <div class="overlay"></div>
+    <div class="content-text">
+      <p>
+        Learn more about listing process, as well as our
+        <br>additional staging and design work.
+      </p>
+      <button class="learns-more-btn">Learn More</button>
+    </div>
+  </section>
+
+  <!-- bottomNavbar -->
+  <div class="footer-navbar">
+    <div class="nav-links">
+      <a href="#home">HOME</a>
+      <a href="#services">SERVICES</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#testimonials">TESTIMONIALS</a>
+      <a href="/#contact-form">CONTACT</a>
+    </div>
+    <div class="subscribe-section">
+      <form  method="POST" action="http://localhost:6001/add-subscriber" >
+        <label for="subscribe-email" class="subscribe-label">SUBSCRIBE US</label>
+        <input type="email" name="email" placeholder="Enter Email Address" class="subscribe-input">
+        <button type="submit" class="subscribe-button">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-left">All rights reserved 2024</div>
+    <div class="footer-center">
+      <img src="/public/assests/logo.svg" alt="Real Trust Logo" class="footer-logo">
+    </div>
+    <div class="footer-right">
+      <a href="https://twitter.com" target="_blank" class="social-icon">
+        <img src="/public/assests/twitter logo.svg" alt="Twitter Logo">
+      </a>
+      <a href="https://facebook.com" target="_blank" class="social-icon">
+        <img src="/public/assests/facebooklogo.svg" alt="Facebook Logo">
+      </a>
+      <a href="https://linkedin.com" target="_blank" class="social-icon">
+        <img src="/public/assests/Linkedin.svg" alt="LinkedIn Logo">
+      </a>
+      <a href="https://instagram.com" target="_blank" class="social-icon">
+        <img src="/public/assests/insta logo.svg" alt="Instagram Logo">
+      </a>
+    </div>
+  </footer>
+
+
+
+
+  <script src="app.js"></script>
+</body>
+
+</html>
